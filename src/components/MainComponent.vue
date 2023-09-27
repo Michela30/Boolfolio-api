@@ -1,26 +1,19 @@
 <script>
 //import
-import axios from 'axios'
+
+import MainCard from './MainCard.vue'
 
    export default {
     data() {
       return{
         //dati
-        projects : [],
       }
     },
     methods: {
         //function
-        addProject(){
-            axios.get('http://localhost:8000/api/projects')
-            .then(response => {
-                this.projects = response.data.projects.data
-                console.log(this.projects)
-            })
-        }
     },
     components: {
-        //dichiarazione
+        MainCard,
     },
     props:{
         //utilizzo per file padre
@@ -33,8 +26,8 @@ import axios from 'axios'
 
 <template>
 
-    <main @click="addProject()">
-        MAIN
+    <main>
+        <MainCard />
     </main>
 
 </template>
