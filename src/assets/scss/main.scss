@@ -1,0 +1,11 @@
+@use 'variables.scss' as *;
+
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
