@@ -14,8 +14,8 @@ import axios from 'axios'
         addProject(){
             axios.get('http://localhost:8000/api/projects')
             .then(response => {
-                
-                console.log(this.projects.response.data)
+                this.projects = response.data.projects.data
+                console.log(this.projects)
             })
         }
     },
