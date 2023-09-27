@@ -25,8 +25,10 @@
 
 
 <template>
-    <footer>
-        FOOTER
+    <footer class="text-center py-5">
+        <strong>
+            &copy;PoweredByMichela
+        </strong>
     </footer>
 
 </template>

@@ -7,15 +7,56 @@ import axios from 'axios'
       return{
         //dati
         projects : [],
+        currentPage: 1,
+        lastPage: 1
       }
     },
     methods: {
         //function
-        addProject(){
-            axios.get('http://localhost:8000/api/projects')
+        getProject(){
+            axios.get('http://localhost:8000/api/projects', {
+                params: {
+                    page: this.currentPage,
+                }
+            })
             .then(response => {
                 this.projects = response.data.projects.data
-                console.log(this.projects)
+                this.currentPage = response.data.projects.current_page
+                this.lastPage = response.data.projects.last_page
+            })
+        },
+
+        changePage(mode){
+            switch(mode){
+
+                case '+':
+                    if(this.currentPage < this.lastPage){
+                        this.currentPage++;
+                        this.getProject();
+
+                    }
+                    break;
+
+                case '-':
+                    if(this.currentPage > 1){
+                        this.currentPage--;
+                        this.getProject();
+
+                    }
+                    break;
+
+            }
+            console.log(this.currentPage)
+
+            axios.get('http://localhost:8000/api/projects', {
+                params: {
+                    page: this.currentPage,
+                }
+            })
+            .then(response => {
+                this.projects = response.data.projects.data
+                this.currentPage = response.data.projects.current_page
+                this.lastPage = response.data.projects.last_page
             })
         }
     },
@@ -23,7 +64,7 @@ import axios from 'axios'
         //components importazione
     },
     created(){
-        this.addProject();
+        this.getProject();
     },
     props:{
         //utilizzo per file padre
@@ -82,6 +123,15 @@ import axios from 'axios'
                 </div>
             </div>
             
+        </div>
+
+        <div class="text-center mt-2">
+            <button @click="changePage('-')" class="btn btn-success ms-2">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button @click="changePage('+')" class="btn btn-success ms-2">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
         </div>
    </section>
     
