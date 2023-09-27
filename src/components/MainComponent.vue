@@ -1,10 +1,12 @@
 <script>
 //import
+import axios from 'axios'
 
    export default {
     data() {
       return{
         //dati
+        projects : [],
       }
     },
     methods: {
@@ -12,15 +14,13 @@
         addProject(){
             axios.get('http://localhost:8000/api/projects')
             .then(response => {
-                console.log(response)
+                
+                console.log(this.projects.response.data)
             })
         }
     },
     components: {
         //dichiarazione
-    },
-    created() {
-      
     },
     props:{
         //utilizzo per file padre
@@ -33,7 +33,7 @@
 
 <template>
 
-    <main>
+    <main @click="addProject()">
         MAIN
     </main>
 
