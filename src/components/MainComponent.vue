@@ -9,9 +9,18 @@
     },
     methods: {
         //function
+        addProject(){
+            axios.get('http://localhost:8000/api/projects')
+            .then(response => {
+                console.log(response)
+            })
+        }
     },
     components: {
         //dichiarazione
+    },
+    created() {
+      
     },
     props:{
         //utilizzo per file padre

@@ -17,10 +17,6 @@ import axios from 'axios';
       FooterComponent
     },
     created(){
-      axios.get('')
-      .then(response => {
-        console.log(response.data)
-      })
 
     }
   }
