@@ -1,7 +1,6 @@
 <script>
 //import
 
-import MainCard from './MainCard.vue'
 
    export default {
     data() {
@@ -13,7 +12,7 @@ import MainCard from './MainCard.vue'
         //function
     },
     components: {
-        MainCard,
+        //components
     },
     props:{
         //utilizzo per file padre
@@ -27,7 +26,9 @@ import MainCard from './MainCard.vue'
 <template>
 
     <main>
-        <MainCard />
+
+      <router-view></router-view>
+      
     </main>
 
 </template>

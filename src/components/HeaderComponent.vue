@@ -25,11 +25,36 @@
 <template>
     
     <header>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-body-tertiary d-flex justify-content-center">
+
             <div class="container-fluid">
-                <a class="navbar-brand">
+                <a class="navbar-brand me-5">
                     Boolfolio
                 </a>
+                <div>
+                    <ul class="navbar-nav d-inline-block">
+                        <li class="nav-item d-inline-block ms-5">
+                            <router-link :to="{ name: 'home'}" class="nav-link"> 
+                                HomePage
+                            </router-link>
+                        </li>
+                        <li class="nav-item ms-5 d-inline-block">
+                            <router-link :to="{ name: 'projects'}" class="nav-link"> 
+                                Projects
+                            </router-link>
+                        </li>
+                        <li class="nav-item ms-5 d-inline-block">
+                            <router-link :to="{ name: ''}" class="nav-link"> 
+                                About Me
+                            </router-link>
+                        </li>
+                        <li class="nav-item ms-5 d-inline-block">
+                            <router-link :to="{ name: ''}" class="nav-link"> 
+                                Contacts
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     

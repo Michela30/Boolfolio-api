@@ -25,7 +25,7 @@
 
 
 <template>
-    <footer class="text-center py-5">
+    <footer class="text-center">
         <strong>
             &copy;PoweredByMichela
         </strong>
@@ -38,5 +38,8 @@
 <style lang="scss" scoped>
 @use '../assets/scss/variables.scss' as *;
 
-
+    footer{
+        height: 70px;
+        padding: 30px 0;
+    }
 </style>
