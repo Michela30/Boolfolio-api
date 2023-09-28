@@ -84,7 +84,7 @@ import axios from 'axios'
         </h2>
         <div class="d-flex flex-wrap">
             <div class="card p-2" v-for="(project, index) in projects">
-                    <img :src="project.thumb" class="card-img-top" :alt="project.title">
+                    <img :src="`${project.full_thumb_path}`" class="card-img-top" :alt="project.title">
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ project.title }}
