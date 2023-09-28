@@ -21,7 +21,7 @@ const router = createRouter({
         component: MainProjects
     },
     {
-        path: '/project/param',
+        path: '/project/:slug',
         name: 'project',
         component: SingleProject
     },

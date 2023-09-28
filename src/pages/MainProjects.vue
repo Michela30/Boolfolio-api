@@ -84,17 +84,13 @@ import axios from 'axios'
         </h2>
         <div class="d-flex flex-wrap">
             <div class="card p-2" v-for="(project, index) in projects">
-                    <img :src="`${project.full_thumb_path}`" class="card-img-top" :alt="project.title">
+                    <div v-if="project.full_thumb_path">
+                        <img :src="project.full_thumb_path" class="card-img-top" :alt="project.title">
+                    </div>
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ project.title }}
                     </h5>
-                    <strong>
-                        Url
-                    </strong>
-                    <a class="card-subtitle mb-2 text-body-secondary">
-                        {{ project.url }}
-                    </a>
                     <br>
                     <strong>
                         Description
@@ -116,9 +112,9 @@ import axios from 'axios'
                         {{ project.technologies.title ?? '---'}}
                     </span>
                     <br>
-                    <a href="" class="btn btn-info mt-2">
+                    <router-link :to="{ name: 'project', params: {slug: project.slug}}" class="btn btn-info mt-2">
                         Show
-                    </a>
+                    </router-link>
                     <br>
                 </div>
             </div>
@@ -148,6 +144,10 @@ import axios from 'axios'
     width: calc((100% / 3) - 20px);
     img{
         height: 220px;
+    }
+
+    .card-body{
+        margin: 0;
     }
 }
 </style>
