@@ -20,7 +20,9 @@ import axios from 'axios'
 
             axios.post ('http://localhost:8000/api/contacts', this.contactData)
             .then(response => {
-                console.log(response)
+                this.contactData.name = '';
+                this.contactData.email = '';
+                this.contactData.message = '';
             })
             .catch( err => {
                 console.log(err.response.data);
