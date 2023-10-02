@@ -49,7 +49,7 @@
                             </router-link>
                         </li>
                         <li class="nav-item ms-5 d-inline-block">
-                            <router-link :to="{ name: ''}" class="nav-link"> 
+                            <router-link :to="{ name: 'contacts'}" class="nav-link"> 
                                 Contacts
                             </router-link>
                         </li>
